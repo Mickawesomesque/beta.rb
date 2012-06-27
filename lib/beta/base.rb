@@ -46,7 +46,7 @@ module Beta
     def connect(login, password)
       if @token.nil? and @token.nil?
         params = { login: login, password: Digest::MD5.hexdigest(password) }
-        json = self.get("/members/auth", params)[:member].symbolize_keys!
+        json = self.get("/members/auth", params)[:member]
         @token = json[:token]
         @login = json[:login]
       end
