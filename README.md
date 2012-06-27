@@ -1,18 +1,20 @@
 beta.rb
 =======
 
-Beta.rb is a simple API wrapper for [Betaseries](http://www.betaseries.com).
+beta.rb is a simple API wrapper for [Betaseries](http://www.betaseries.com).
 
 How to use it?
 ==============
 
-First, you're goind to need an [API key](http://http://www.betaseries.com/api).
+First, you're goind to need an [API key](http://www.betaseries.com/api).
 
 Initializing
 ------------
 
 You need to pass your API key to the Base object like this:
 ```ruby
+require_relative "lib/beta"
+
 bs = Beta::Base.new(YOUR_API_KEY)
 ```
 
