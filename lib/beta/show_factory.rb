@@ -16,7 +16,7 @@ module Beta
     end
 
     def find(name)
-      json = @bs.get("/shows/display/#{name}")[:show].symbolize_keys!
+      json = @bs.get("/shows/display/#{name}")[:show]
       Show.new(json)
     end
   end
