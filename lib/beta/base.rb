@@ -15,7 +15,7 @@ module Beta
       Beta::log("GET " + path)
       raw = Net::HTTP.get(URI.parse(path))
       json = JSON.parse(raw, :symbolize_names => true)
-      raise Beta::Error.new(json, "Mauvais format de reponse (API)") unless json.has_key?(:root)
+      raise Beta::Error.new(json, "Bad format for the answer (API)") unless json.has_key?(:root)
       if json[:root].has_key?(:code) and json[:root][:code].to_s == "0"
         raise Beta::Error.new(json[:root])
       end

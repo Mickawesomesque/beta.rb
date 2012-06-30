@@ -6,7 +6,7 @@ module Beta
 
     def all
       json = @bs.get("/shows/display/all")
-      raise Beta::Error.new(json, "Mauvais format de reponse (API)") unless json.has_key?(:shows)
+      raise Beta::Error.new(json, "Bad format for the answer (API)") unless json.has_key?(:shows)
 
       shows = []
       json[:shows].each do |key, value|
